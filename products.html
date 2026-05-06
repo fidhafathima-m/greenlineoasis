@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Green Line Oasis LLP</title>
+  <meta name="description" content="Pet Grade Poultry Byproduct Meal and Poultry Oil — premium products from Green Line Oasis LLP." />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ─── PRODUCTS INTRO ─── */
+    .products-intro {
+      padding: 72px 5%;
+      max-width: 920px;
+    }
+    .products-intro-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .products-intro-label::before {
+      content: '';
+      display: inline-block;
+      width: 22px;
+      height: 2px;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+    .products-intro h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .products-intro p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* ─── PRODUCT DETAIL ─── */
+    .product-detail {
+      padding: 0 5% 72px;
+    }
+    .product-detail-inner {
+      border-top: 1px solid var(--border);
+      padding-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 0;
+    }
+    .product-detail-inner + .product-detail-inner {
+      margin-top: 72px;
+    }
+    .product-detail-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    .product-detail-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 22px;
+      line-height: 1.15;
+    }
+    .product-detail-text p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    /* Specs table */
+    .product-specs {
+      margin-top: 28px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .product-specs-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 12px 16px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row:hover { background: var(--green-pale); }
+    .spec-key {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .spec-val {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .product-detail-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      transition: box-shadow 0.3s;
+      min-height: 280px;
+      padding: 24px;
+    }
+    .product-detail-img:hover {
+      box-shadow: 0 12px 40px rgba(58,140,28,0.14);
+    }
+    
+    .product-detail-img img {
+      display: block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;   
+      border-radius: 6px;
+      transition: transform 0.25s ease;
+    }
+    .product-detail-img img:hover {
+      transform: scale(1.02);
+    }
+    
+    .product-detail-img {
+      position: relative;
+    }
+
+    /* ─── REVERSED LAYOUT ─── */
+    .product-detail-inner.reverse > .product-detail-text { order: 2; }
+    .product-detail-inner.reverse > .product-detail-img  { order: 1; }
+
+    @media (max-width: 820px) {
+      .product-detail-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .product-detail-inner.reverse > .product-detail-text { order: unset; }
+      .product-detail-inner.reverse > .product-detail-img  { order: unset; }
+      .product-detail-img {
+        padding: 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      .products-intro, .product-detail { padding: 52px 5%; }
+      .product-detail-img {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="images/logo/logo.jpeg" alt="Green Line Oasis LLP" />
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="about.html" data-page="about">About</a></li>
+    <li><a href="products.html" data-page="products">Products</a></li>
+    <li class="contact-link"><a href="contact.html" data-page="contact">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" data-page="home">Home</a>
+  <a href="about.html" data-page="about">About</a>
+  <a href="products.html" data-page="products">Products</a>
+  <a href="contact.html" data-page="contact">Contact Us</a>
+</div>
+
+<!-- ─── PAGE BANNER ─── -->
+<div class="page-banner">
+  <h1 class="reveal">Our Products</h1>
+</div>
+
+<!-- ─── INTRO ─── -->
+<div class="products-intro reveal">
+  <div class="products-intro-label">What We Offer</div>
+  <h2>Premium by-product solutions</h2>
+  <p>Green Line Oasis LLP produces two core products — both derived from rigorously processed poultry by-products and meeting the highest industry standards for quality, hygiene, and consistency.</p>
+</div>
+
+<!-- ─── PRODUCT 1 ─── -->
+<div class="product-detail">
+  <div class="product-detail-inner">
+    <div class="product-detail-text reveal-left">
+      <div class="product-detail-label">Product 01</div>
+      <h2 class="product-detail-title">Pet Grade Poultry Byproduct Meal</h2>
+      <p>Our Pet Grade Poultry Byproduct Meal is a superior source of nutrition carefully formulated for use in pet food and animal feed. With a protein content of up to 65% and controlled levels of ash, fat, and moisture, it offers a balanced and enriching dietary supplement.</p>
+      <p>Presented in a solid, powder form with a light to mid-brown colour, our poultry byproduct meal carries a natural aroma of poultry meat, free from rancidity. The product undergoes treatment to eliminate salmonella and other pathogenic agents, ensuring full purity at the point of dispatch.</p>
+      <p>Packaged in bulk or in 50 kg bags and stored in clean, ventilated conditions at room temperature, the product maintains a shelf life of 12 months from the date of manufacture.</p>
+      <div class="product-specs">
+        <div class="product-specs-title">Key Specifications</div>
+        <div class="spec-row"><span class="spec-key">Protein Content</span><span class="spec-val">Up to 65%</span></div>
+        <div class="spec-row"><span class="spec-key">Form</span><span class="spec-val">Solid / Powder</span></div>
+        <div class="spec-row"><span class="spec-key">Colour</span><span class="spec-val">Light to Mid-Brown</span></div>
+        <div class="spec-row"><span class="spec-key">Packaging</span><span class="spec-val">Bulk / 50 kg bags</span></div>
+        <div class="spec-row"><span class="spec-key">Shelf Life</span><span class="spec-val">12 months</span></div>
+        <div class="spec-row"><span class="spec-key">Pathogen Treatment</span><span class="spec-val">Salmonella-free</span></div>
+      </div>
+    </div>
+    <div class="product-detail-img reveal-right">
+      <!-- Product image 1: Original dimensions preserved – no cropping, no distortion -->
+      <img src="images/products/product1.jpeg" alt="Pet Grade Poultry Byproduct Meal - Premium poultry meal for pet food applications">
+    </div>
+  </div>
+
+  <!-- ─── PRODUCT 2 ─── -->
+  <div class="product-detail-inner reverse">
+    <div class="product-detail-text reveal-right">
+      <div class="product-detail-label">Product 02</div>
+      <h2 class="product-detail-title">Poultry Oil</h2>
+      <p>Green Line Oasis LLP's poultry oil is an essential source of lipids used across the animal feed industry and related sectors. Derived from carefully collected and processed raw materials sourced from inspected slaughterhouses, our poultry oil reflects our commitment to quality and sustainability.</p>
+      <p>The oil presents as a clear liquid with distinct yellowish tones and adheres to the highest hygiene standards. It is free from salmonella and other pathogenic agents, achieved through strict temperature control throughout the manufacturing process.</p>
+      <p>Supplied in bulk and stored in appropriate metallic tanks to minimise environmental impact, our poultry oil has a shelf life of 12 months from the date of production. It is widely used in animal feed production, and the growing biofuel segment.</p>
+      <div class="product-specs">
+        <div class="product-specs-title">Key Specifications</div>
+        <div class="spec-row"><span class="spec-key">Form</span><span class="spec-val">Clear Liquid</span></div>
+        <div class="spec-row"><span class="spec-key">Colour</span><span class="spec-val">Yellowish</span></div>
+        <div class="spec-row"><span class="spec-key">Storage</span><span class="spec-val">Bulk / Metallic Tanks</span></div>
+        <div class="spec-row"><span class="spec-key">Shelf Life</span><span class="spec-val">12 months</span></div>
+        <div class="spec-row"><span class="spec-key">Pathogen Treatment</span><span class="spec-val">Salmonella-free</span></div>
+        <div class="spec-row"><span class="spec-key">Applications</span><span class="spec-val">Animal Feed, Biofuel</span></div>
+      </div>
+    </div>
+    <div class="product-detail-img oil-bg reveal-left">
+      <!-- Product image 2: Original size retained, no clipping, no forced aspect. -->
+      <img src="images/products/product2.jpeg" alt="Poultry Oil - Pure poultry-derived oil for feed and industrial applications">
+    </div>
+  </div>
+</div>
+
+<!-- ─── CONTACT CTA ─── -->
+<div class="contact-cta reveal">
+  <div class="contact-cta-img-wrap">
+    <svg class="contact-cta-svg" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1440" height="280" fill="#1a3a0d"/>
+      <ellipse cx="720" cy="280" rx="900" ry="200" fill="#1f4510"/>
+      <rect x="0" y="200" width="1440" height="80" fill="#224e12"/>
+      <line x1="0" y1="215" x2="1440" y2="215" stroke="#2d6b16" stroke-width="5" opacity="0.4"/>
+      <polygon points="300,200 330,130 360,200" fill="#1a4a0a"/>
+      <rect x="325" y="200" width="10" height="20" fill="#14350a"/>
+      <polygon points="1080,200 1115,118 1150,200" fill="#1c500b"/>
+      <rect x="1110" y="200" width="12" height="22" fill="#14350a"/>
+    </svg>
+    <div class="contact-cta-overlay">
+      <h3>Interested in our products?</h3>
+      <p>Get in touch with our team today to discuss your requirements.</p>
+      <a class="banner-btn" href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo/logo_nobg.png" alt="Green Line Oasis LLP" />
+      <p>Poultry by-product recycling from Maharashtra</p>
+    </div>
+    <div class="footer-info">
+      <h4>Contact</h4>
+      <p>Phone: +91 70253 53703</p>
+      <a href="mailto:greenlineoasis@gmail.com">greenlineoasis@gmail.com</a>
+      <p>Plot B-42, MIDC Paithan, <br/>Dist. Chhatrapati Sambhajinagar, MH 431107</p>
+    </div>
+    <div class="footer-info">
+      <h4>Pages</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+  </div>
+  <div class="footer-bottom">© 2026 Green Line Oasis LLP. All rights reserved.</div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

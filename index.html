@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Line Oasis LLP | Poultry By-Product Recycling, Aurangabad</title>
+  <meta name="description" content="Aurangabad's leading producer of premium poultry by-product meal and poultry oil. Quality recycling for animal feed industries." />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ─── BANNER ─── */
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 88vh;
+      min-height: 480px;
+      max-height: 820px;
+      overflow: hidden;
+      background: #1c2e14;
+    }
+    .banner-svg-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+    }
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(20,45,10,0.84) 0%,
+        rgba(20,45,10,0.58) 55%,
+        rgba(20,45,10,0.26) 100%
+      );
+    }
+    .banner-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 8%;
+      max-width: 780px;
+    }
+    .banner-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(180,230,140,0.9);
+      margin-bottom: 18px;
+      opacity: 0;
+      animation: fadeSlideUp 0.7s 0.2s ease forwards;
+    }
+    .banner-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(34px, 5.5vw, 64px);
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 22px;
+      font-weight: 800;
+      opacity: 0;
+      animation: fadeSlideUp 0.7s 0.38s ease forwards;
+    }
+    .banner-body {
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.78;
+      color: rgba(255,255,255,0.78);
+      max-width: 500px;
+      margin-bottom: 38px;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeSlideUp 0.7s 0.54s ease forwards;
+    }
+    .banner-btn-wrap {
+      opacity: 0;
+      animation: fadeSlideUp 0.7s 0.68s ease forwards;
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── HOME ABOUT ─── */
+    .home-about {
+      padding: 80px 5%;
+      max-width: 940px;
+    }
+    .home-about h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .home-about p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+      font-weight: 300;
+    }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .read-more::after {
+      content: '→';
+      transition: transform 0.2s;
+    }
+    .read-more:hover { color: var(--green-dark); }
+    .read-more:hover::after { transform: translateX(4px); }
+
+    /* ─── HOME PRODUCTS ─── */
+    .home-products {
+      background: var(--bg);
+      padding: 72px 5%;
+    }
+    .home-products-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .home-products-header::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 2px;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+    .home-products h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .product-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .product-tile {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 32px 28px;
+      cursor: pointer;
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-tile::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--green);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+      transform-origin: bottom;
+    }
+    .product-tile:hover::before { transform: scaleY(1); transform-origin: top; }
+    .product-tile:hover {
+      box-shadow: 0 10px 32px rgba(58,140,28,0.12);
+      border-color: rgba(58,140,28,0.3);
+    }
+    .tile-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: #cde4c0;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 52px;
+      transition: color 0.3s;
+    }
+    .product-tile:hover .tile-num { color: var(--green-pale); }
+    .tile-body h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .product-tile:hover .tile-body h4 { color: var(--green); }
+    .tile-body p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      position: relative;
+      padding: 88px 5%;
+      overflow: hidden;
+      background: var(--green-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      right: -100px;
+      bottom: -100px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .cta-band::after {
+      content: '';
+      position: absolute;
+      right: 80px;
+      top: -60px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+    .cta-band h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(24px, 3.5vw, 40px);
+      color: var(--white);
+      font-weight: 700;
+      max-width: 600px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-band p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.70);
+      max-width: 500px;
+      line-height: 1.75;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-band .banner-btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 820px) {
+      .product-row { grid-template-columns: 1fr; }
+      .banner-content { padding: 0 6%; }
+      .banner { height: 80vw; min-height: 340px; }
+    }
+    @media (max-width: 480px) {
+      .banner-title { font-size: 28px; }
+      .home-about { padding: 52px 5%; }
+      .home-products { padding: 52px 5%; }
+      .cta-band { padding: 60px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="images/logo/logo.jpeg" alt="Green Line Oasis LLP" />
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-page="home">Home</a></li>
+    <li><a href="about.html" data-page="about">About</a></li>
+    <li><a href="products.html" data-page="products">Products</a></li>
+    <li class="contact-link"><a href="contact.html" data-page="contact">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" data-page="home">Home</a>
+  <a href="about.html" data-page="about">About</a>
+  <a href="products.html" data-page="products">Products</a>
+  <a href="contact.html" data-page="contact">Contact Us</a>
+</div>
+
+<!-- ─── HERO BANNER ─── -->
+<div class="banner">
+  <svg class="banner-svg-wrap" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1440" height="700" fill="#1a3a0d"/>
+    <ellipse cx="720" cy="700" rx="900" ry="320" fill="#1f4510"/>
+    <ellipse cx="200" cy="700" rx="500" ry="280" fill="#1b3d0e"/>
+    <ellipse cx="1280" cy="700" rx="460" ry="260" fill="#1d4112"/>
+    <rect x="0" y="480" width="1440" height="220" fill="#224e12"/>
+    <rect x="0" y="540" width="1440" height="160" fill="#275c13"/>
+    <line x1="0" y1="560" x2="1440" y2="560" stroke="#2d6b16" stroke-width="8" opacity="0.5"/>
+    <line x1="0" y1="580" x2="1440" y2="580" stroke="#2d6b16" stroke-width="6" opacity="0.4"/>
+    <line x1="0" y1="600" x2="1440" y2="600" stroke="#2d6b16" stroke-width="5" opacity="0.3"/>
+    <line x1="0" y1="620" x2="1440" y2="620" stroke="#336118" stroke-width="4" opacity="0.25"/>
+    <rect x="0" y="630" width="1440" height="70" fill="#1e4d0e"/>
+    <ellipse cx="1100" cy="200" rx="80" ry="80" fill="rgba(255,220,100,0.06)"/>
+    <ellipse cx="1100" cy="200" rx="140" ry="140" fill="rgba(255,200,60,0.04)"/>
+    <polygon points="340,460 370,380 400,460" fill="#1a4a0a"/>
+    <rect x="365" y="460" width="10" height="30" fill="#14350a"/>
+    <polygon points="600,470 635,375 670,470" fill="#1b4d0a"/>
+    <rect x="630" y="470" width="11" height="28" fill="#14350a"/>
+    <polygon points="1050,465 1085,368 1120,465" fill="#1c500b"/>
+    <rect x="1080" y="465" width="12" height="30" fill="#14350a"/>
+    <polygon points="1260,475 1290,390 1322,475" fill="#1a4a0a"/>
+    <rect x="1286" y="475" width="10" height="26" fill="#14350a"/>
+    <ellipse cx="180" cy="490" rx="55" ry="28" fill="#1c4d0b"/>
+    <ellipse cx="870" cy="488" rx="48" ry="24" fill="#1e510c"/>
+    <ellipse cx="1380" cy="492" rx="44" ry="22" fill="#1c4d0b"/>
+  </svg>
+  <div class="banner-overlay"></div>
+  <div class="banner-content">
+    <div class="banner-eyebrow">Aurangabad, Maharashtra</div>
+    <h1 class="banner-title">Green Line Oasis LLP</h1>
+    <p class="banner-body">Producers of premium poultry by-product meal and poultry oil. Committed to quality, sustainability, and responsible recycling.</p>
+    <div class="banner-btn-wrap">
+      <a class="banner-btn" href="products.html">Explore Products</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ABOUT SNIPPET ─── -->
+<div class="home-about reveal">
+  <h2>About Us</h2>
+  <p>We specialize in the recycling of poultry by-products, producing high-quality poultry by-product meals and poultry oil. As a growing name in the animal by-product recycling sector in Maharashtra, our commitment to quality and responsible processing has positioned us as a trusted partner for industries across the region.</p>
+  <a class="read-more" href="about.html">Read More</a>
+</div>
+
+<!-- ─── PRODUCTS ─── -->
+<div class="home-products">
+  <div class="home-products-header">
+    <h3>Products</h3>
+  </div>
+  <div class="product-row">
+    <a class="product-tile reveal delay-1" href="products.html" style="text-decoration:none;">
+      <div class="tile-num">01</div>
+      <div class="tile-body">
+        <h4>Pet Grade Poultry Byproduct Meal</h4>
+        <p>High-protein meal from rendered poultry by-products, suitable for pet food and animal feed formulations.</p>
+      </div>
+    </a>
+    <a class="product-tile reveal delay-2" href="products.html" style="text-decoration:none;">
+      <div class="tile-num">02</div>
+      <div class="tile-body">
+        <h4>Poultry Oil</h4>
+        <p>Premium rendered poultry fat, a versatile source of lipids used in animal feed and industrial applications.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ─── CTA BAND ─── -->
+<div class="cta-band reveal">
+  <h2>Sourced right. Processed well. Delivered with care.</h2>
+  <p>Get in touch with our team to learn more about our products and how we can serve your business.</p>
+  <a class="banner-btn index-btn" href="contact.html">Contact Us</a>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo/logo_nobg.png" alt="Green Line Oasis LLP" />
+      <p>Poultry by-product recycling from Maharashtra</p>
+    </div>
+    <div class="footer-info">
+      <h4>Contact</h4>
+      <p>Phone: +91 70253 53703</p>
+      <a href="mailto:greenlineoasis@gmail.com">greenlineoasis@gmail.com</a>
+      <p>Plot B-42, MIDC Paithan, <br/>Dist. Chhatrapati Sambhajinagar, MH 431107</p>
+    </div>
+    <div class="footer-info">
+      <h4>Pages</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Green Line Oasis LLP. All rights reserved.</div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
