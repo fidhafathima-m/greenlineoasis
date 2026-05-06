@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +14,7 @@
       padding: 72px 5%;
       max-width: 900px;
     }
+
     .about-section-label {
       font-family: 'Poppins', sans-serif;
       font-size: 11px;
@@ -25,6 +27,7 @@
       align-items: center;
       gap: 10px;
     }
+
     .about-section-label::before {
       content: '';
       display: inline-block;
@@ -33,6 +36,7 @@
       background: var(--green);
       flex-shrink: 0;
     }
+
     .about-body-wrap h2 {
       font-family: 'Poppins', sans-serif;
       font-size: clamp(22px, 3vw, 34px);
@@ -40,6 +44,7 @@
       margin-bottom: 20px;
       color: var(--text);
     }
+
     .about-body-wrap p {
       font-size: 16px;
       line-height: 1.9;
@@ -56,6 +61,7 @@
       margin: 32px 0 24px;
       border-radius: 0 12px 12px 0;
     }
+
     .highlight-statement p {
       font-size: 17px;
       font-weight: 500;
@@ -63,6 +69,7 @@
       margin-bottom: 0;
       line-height: 1.7;
     }
+
     .highlight-statement .highlight-icon {
       font-size: 24px;
       margin-right: 12px;
@@ -76,12 +83,14 @@
       grid-template-columns: 2fr 1fr;
       gap: 16px;
     }
+
     .about-img-main {
       border-radius: 6px;
       overflow: hidden;
       background: var(--green-pale);
       aspect-ratio: 16/7;
     }
+
     .about-img-side {
       border-radius: 6px;
       overflow: hidden;
@@ -94,9 +103,11 @@
       background: var(--bg);
       padding: 72px 5%;
     }
+
     .about-values-header {
       margin-bottom: 44px;
     }
+
     .about-values-header h2 {
       font-family: 'Poppins', sans-serif;
       font-size: clamp(20px, 2.8vw, 30px);
@@ -104,11 +115,13 @@
       color: var(--text);
       margin-top: 8px;
     }
+
     .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+
     .value-card {
       background: var(--white);
       border: 1px solid var(--border);
@@ -116,10 +129,12 @@
       padding: 32px 24px;
       transition: box-shadow 0.3s, transform 0.3s;
     }
+
     .value-card:hover {
-      box-shadow: 0 8px 28px rgba(58,140,28,0.10);
+      box-shadow: 0 8px 28px rgba(58, 140, 28, 0.10);
       transform: translateY(-4px);
     }
+
     .value-icon {
       width: 44px;
       height: 44px;
@@ -131,6 +146,7 @@
       margin-bottom: 18px;
       font-size: 20px;
     }
+
     .value-card h3 {
       font-family: 'Poppins', sans-serif;
       font-size: 15px;
@@ -138,6 +154,7 @@
       color: var(--text);
       margin-bottom: 10px;
     }
+
     .value-card p {
       font-size: 13.5px;
       color: var(--text-muted);
@@ -150,6 +167,7 @@
       padding: 72px 5%;
       max-width: 900px;
     }
+
     .about-body-wrap-2 p {
       font-size: 16px;
       line-height: 1.9;
@@ -159,167 +177,192 @@
     }
 
     @media (max-width: 820px) {
-      .about-img-grid { grid-template-columns: 1fr; }
-      .about-img-side { aspect-ratio: 16/7; }
-      .values-grid { grid-template-columns: 1fr; gap: 16px; }
-      .highlight-statement { padding: 20px 24px; }
-      .highlight-statement p { font-size: 15px; }
+      .about-img-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-img-side {
+        aspect-ratio: 16/7;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .highlight-statement {
+        padding: 20px 24px;
+      }
+
+      .highlight-statement p {
+        font-size: 15px;
+      }
     }
+
     @media (max-width: 480px) {
-      .about-body-wrap, .about-body-wrap-2 { padding: 52px 5%; }
-      .about-values { padding: 52px 5%; }
+
+      .about-body-wrap,
+      .about-body-wrap-2 {
+        padding: 52px 5%;
+      }
+
+      .about-values {
+        padding: 52px 5%;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ─── NAV ─── -->
-<nav>
-  <a class="nav-logo" href="index.html">
-    <img src="images/logo/logo.jpeg" alt="Green Line Oasis LLP" />
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" data-page="home">Home</a></li>
-    <li><a href="about.html" data-page="about">About</a></li>
-    <li><a href="products.html" data-page="products">Products</a></li>
-    <li class="contact-link"><a href="contact.html" data-page="contact">Contact Us</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html" data-page="home">Home</a>
-  <a href="about.html" data-page="about">About</a>
-  <a href="products.html" data-page="products">Products</a>
-  <a href="contact.html" data-page="contact">Contact Us</a>
-</div>
-
-<!-- ─── PAGE BANNER ─── -->
-<div class="page-banner">
-  <h1 class="reveal">About Us</h1>
-</div>
-
-<!-- ─── INTRO ─── -->
-<div class="about-body-wrap reveal">
-  <div class="about-section-label">Who We Are</div>
-  <h2>Green Line Oasis LLP</h2>
-  <p>Welcome to Green Line Oasis LLP, Aurangabad's dedicated innovator in sustainable poultry by-product recycling. We specialize in producing high-quality poultry by-product meals and poultry oil, backed by a commitment to responsible processing and environmental care.</p>
-  <p>Our facility is built around a scientific approach to collecting and processing poultry slaughter by-products. Every step — from raw material intake to final packaging — is managed with precision, hygiene, and consistency at the core of our operations.</p>
-  
-  <!-- ADDED HIGHLIGHT STATEMENT HERE -->
-  <div class="highlight-statement reveal">
-    <p>
-      We are having a Rendering plant with premium quality machinery using European technology, operating as per EU norms to manufacture premium high quality products with high protein and high digestibility.
-    </p>
+  <!-- ─── NAV ─── -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo/logo.jpeg" alt="Green Line Oasis LLP" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="products.html" data-page="products">Products</a></li>
+      <li class="contact-link"><a href="contact.html" data-page="contact">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-page="home">Home</a>
+    <a href="about.html" data-page="about">About</a>
+    <a href="products.html" data-page="products">Products</a>
+    <a href="contact.html" data-page="contact">Contact Us</a>
   </div>
-</div>
 
-<!-- ─── IMAGE GRID ─── -->
-<div class="about-img-grid">
-  <div class="about-img-main reveal-left">
-    <svg viewBox="0 0 812 304" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-      <rect width="812" height="304" fill="#d0e8c0"/>
-      <ellipse cx="406" cy="304" rx="500" ry="160" fill="#b8d9a0"/>
-      <rect x="0" y="200" width="812" height="104" fill="#a8cc90"/>
-      <polygon points="180,200 210,130 240,200" fill="#7aaa5a"/>
-      <polygon points="560,200 595,118 630,200" fill="#6fa055"/>
-      <rect x="204" y="200" width="12" height="24" fill="#5a8040"/>
-      <rect x="589" y="200" width="13" height="22" fill="#5a8040"/>
-      <ellipse cx="120" cy="210" rx="45" ry="22" fill="#8dba6a"/>
-      <ellipse cx="680" cy="208" rx="40" ry="20" fill="#8dba6a"/>
-      <text x="406" y="108" text-anchor="middle" font-family="Poppins,sans-serif" font-size="13" fill="#557a3a" opacity="0.6">Processing Facility — Aurangabad</text>
-    </svg>
+  <!-- ─── PAGE BANNER ─── -->
+  <div class="page-banner">
+    <h1 class="reveal">About Us</h1>
   </div>
-  <div class="about-img-side reveal-right">
-    <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-      <rect width="280" height="280" fill="#c8e4b0"/>
-      <ellipse cx="140" cy="280" rx="180" ry="100" fill="#a8cc8a"/>
-      <rect x="0" y="190" width="280" height="90" fill="#98ba78"/>
-      <polygon points="80,190 105,120 130,190" fill="#6a9848"/>
-      <rect x="100" y="190" width="10" height="20" fill="#4a7030"/>
-      <ellipse cx="50" cy="198" rx="35" ry="18" fill="#82aa62"/>
-      <ellipse cx="230" cy="195" rx="32" ry="16" fill="#82aa62"/>
-    </svg>
-  </div>
-</div>
 
-<!-- ─── VALUES ─── -->
-<div class="about-values">
-  <div class="about-values-header reveal">
-    <div class="about-section-label">Our Principles</div>
-    <h2>What drives us forward</h2>
-  </div>
-  <div class="values-grid">
-    <div class="value-card reveal delay-1">
-      <div class="value-icon"><i class="fas fa-leaf"></i></div>
-      <h3>Sustainability</h3>
-      <p>Every process is designed with environmental responsibility in mind, minimising waste and impact across our operations.</p>
-    </div>
-    <div class="value-card reveal delay-2">
-      <div class="value-icon"><i class="fas fa-flask"></i></div>
-      <h3>Quality Science</h3>
-      <p>We apply a scientific approach at every stage — from raw material sourcing to final dispatch — ensuring consistent, reliable output.</p>
-    </div>
-    <div class="value-card reveal delay-3">
-      <div class="value-icon"><i class="fas fa-handshake"></i></div>
-      <h3>Trusted Partnerships</h3>
-      <p>Our customers rely on us for consistent supply, transparent processes, and a commitment to their industry's success.</p>
+  <!-- ─── INTRO ─── -->
+  <div class="about-body-wrap reveal">
+    <div class="about-section-label">Who We Are</div>
+    <h2>Green Line Oasis LLP</h2>
+    <p>Welcome to Green Line Oasis LLP, Aurangabad's dedicated innovator in sustainable poultry by-product recycling. We specialize in producing high-quality poultry by-product meals and poultry oil, backed by a commitment to responsible processing and environmental care.</p>
+    <p>Our facility is built around a scientific approach to collecting and processing poultry slaughter by-products. Every step — from raw material intake to final packaging — is managed with precision, hygiene, and consistency at the core of our operations.</p>
+
+    <!-- ADDED HIGHLIGHT STATEMENT HERE -->
+    <div class="highlight-statement reveal">
+      <p>
+        We are having a Rendering plant with premium quality machinery using European technology, operating as per EU norms to manufacture premium high quality products with high protein and high digestibility.
+      </p>
     </div>
   </div>
-</div>
 
-<!-- ─── CLOSING BODY ─── -->
-<div class="about-body-wrap-2 reveal">
-  <p>At Green Line Oasis LLP, we take pride in our stringent quality control, ensuring that every product meets the highest industry standards. Our mission goes beyond delivering superior poultry by-product meals and poultry oil — we strive to foster sustainable practices that benefit both businesses and the planet.</p>
-  <p>With a focus on quality and sustainability, our products cater to animal feed and related industries. By leveraging responsible technology and an eco-conscious approach, we offer solutions that bring real value to our customers while minimising environmental impact.</p>
-</div>
-
-<!-- ─── CONTACT CTA ─── -->
-<div class="contact-cta reveal">
-  <div class="contact-cta-img-wrap">
-    <svg class="contact-cta-svg" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <rect width="1440" height="280" fill="#1a3a0d"/>
-      <ellipse cx="720" cy="280" rx="900" ry="200" fill="#1f4510"/>
-      <rect x="0" y="200" width="1440" height="80" fill="#224e12"/>
-      <line x1="0" y1="215" x2="1440" y2="215" stroke="#2d6b16" stroke-width="5" opacity="0.4"/>
-      <polygon points="300,200 330,130 360,200" fill="#1a4a0a"/>
-      <rect x="325" y="200" width="10" height="20" fill="#14350a"/>
-      <polygon points="1080,200 1115,118 1150,200" fill="#1c500b"/>
-      <rect x="1110" y="200" width="12" height="22" fill="#14350a"/>
-    </svg>
-    <div class="contact-cta-overlay">
-      <h3>Contact Us</h3>
-      <p>Get in touch with our team today to avail our products and services.</p>
-      <a class="banner-btn" href="contact.html">Contact Us</a>
+  <!-- ─── IMAGE GRID ─── -->
+  <div class="about-img-grid">
+    <div class="about-img-main reveal-left">
+      <svg viewBox="0 0 812 304" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <rect width="812" height="304" fill="#d0e8c0" />
+        <ellipse cx="406" cy="304" rx="500" ry="160" fill="#b8d9a0" />
+        <rect x="0" y="200" width="812" height="104" fill="#a8cc90" />
+        <polygon points="180,200 210,130 240,200" fill="#7aaa5a" />
+        <polygon points="560,200 595,118 630,200" fill="#6fa055" />
+        <rect x="204" y="200" width="12" height="24" fill="#5a8040" />
+        <rect x="589" y="200" width="13" height="22" fill="#5a8040" />
+        <ellipse cx="120" cy="210" rx="45" ry="22" fill="#8dba6a" />
+        <ellipse cx="680" cy="208" rx="40" ry="20" fill="#8dba6a" />
+        <text x="406" y="108" text-anchor="middle" font-family="Poppins,sans-serif" font-size="13" fill="#557a3a" opacity="0.6">Processing Facility — Aurangabad</text>
+      </svg>
+    </div>
+    <div class="about-img-side reveal-right">
+      <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <rect width="280" height="280" fill="#c8e4b0" />
+        <ellipse cx="140" cy="280" rx="180" ry="100" fill="#a8cc8a" />
+        <rect x="0" y="190" width="280" height="90" fill="#98ba78" />
+        <polygon points="80,190 105,120 130,190" fill="#6a9848" />
+        <rect x="100" y="190" width="10" height="20" fill="#4a7030" />
+        <ellipse cx="50" cy="198" rx="35" ry="18" fill="#82aa62" />
+        <ellipse cx="230" cy="195" rx="32" ry="16" fill="#82aa62" />
+      </svg>
     </div>
   </div>
-</div>
 
-<!-- ─── FOOTER ─── -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="images/logo/logo_nobg.png" alt="Green Line Oasis LLP" />
-      <p>Poultry by-product recycling from Maharashtra</p>
+  <!-- ─── VALUES ─── -->
+  <div class="about-values">
+    <div class="about-values-header reveal">
+      <div class="about-section-label">Our Principles</div>
+      <h2>What drives us forward</h2>
     </div>
-    <div class="footer-info">
-      <h4>Contact</h4>
-      <p>Phone: +91 70253 53703</p>
-      <a href="mailto:greenlineoasis@gmail.com">greenlineoasis@gmail.com</a>
-      <p>Plot B-42, MIDC Paithan, <br/>Dist. Chhatrapati Sambhajinagar, MH 431107</p>
-    </div>
-    <div class="footer-info">
-      <h4>Pages</h4>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact Us</a>
+    <div class="values-grid">
+      <div class="value-card reveal delay-1">
+        <div class="value-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Sustainability</h3>
+        <p>Every process is designed with environmental responsibility in mind, minimising waste and impact across our operations.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <div class="value-icon"><i class="fas fa-flask"></i></div>
+        <h3>Quality Science</h3>
+        <p>We apply a scientific approach at every stage — from raw material sourcing to final dispatch — ensuring consistent, reliable output.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <div class="value-icon"><i class="fas fa-handshake"></i></div>
+        <h3>Trusted Partnerships</h3>
+        <p>Our customers rely on us for consistent supply, transparent processes, and a commitment to their industry's success.</p>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Green Line Oasis LLP. All rights reserved.</div>
-</footer>
 
-<script src="shared.js"></script>
+  <!-- ─── CLOSING BODY ─── -->
+  <div class="about-body-wrap-2 reveal">
+    <p>At Green Line Oasis LLP, we take pride in our stringent quality control, ensuring that every product meets the highest industry standards. Our mission goes beyond delivering superior poultry by-product meals and poultry oil — we strive to foster sustainable practices that benefit both businesses and the planet.</p>
+    <p>With a focus on quality and sustainability, our products cater to animal feed and related industries. By leveraging responsible technology and an eco-conscious approach, we offer solutions that bring real value to our customers while minimising environmental impact.</p>
+  </div>
+
+  <!-- ─── CONTACT CTA ─── -->
+  <div class="contact-cta reveal">
+    <div class="contact-cta-img-wrap">
+      <svg class="contact-cta-svg" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1440" height="280" fill="#1a3a0d" />
+        <ellipse cx="720" cy="280" rx="900" ry="200" fill="#1f4510" />
+        <rect x="0" y="200" width="1440" height="80" fill="#224e12" />
+        <line x1="0" y1="215" x2="1440" y2="215" stroke="#2d6b16" stroke-width="5" opacity="0.4" />
+        <polygon points="300,200 330,130 360,200" fill="#1a4a0a" />
+        <rect x="325" y="200" width="10" height="20" fill="#14350a" />
+        <polygon points="1080,200 1115,118 1150,200" fill="#1c500b" />
+        <rect x="1110" y="200" width="12" height="22" fill="#14350a" />
+      </svg>
+      <div class="contact-cta-overlay">
+        <h3>Contact Us</h3>
+        <p>Get in touch with our team today to avail our products and services.</p>
+        <a class="banner-btn" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo/logo_nobg.png" alt="Green Line Oasis LLP" />
+        <p>Poultry by-product recycling from Maharashtra</p>
+      </div>
+      <div class="footer-info">
+        <h4>Contact</h4>
+        <p>Phone: +91 70253 53703</p>
+        <a href="mailto:greenlineoasis@gmail.com">greenlineoasis@gmail.com</a>
+        <p>Plot B-42, MIDC Paithan, <br />Dist. Chhatrapati Sambhajinagar, MH 431107</p>
+      </div>
+      <div class="footer-info">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Green Line Oasis LLP. All rights reserved.</div>
+  </footer>
+
+  <script src="shared.js"></script>
 </body>
+
 </html>
